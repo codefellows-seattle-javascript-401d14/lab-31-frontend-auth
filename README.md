@@ -10,7 +10,6 @@
 * write a question and observation on canvas
 
 # Directions
-* use the **ng-template** repo as your safolding for this project
 * inclde an .eslintrc
 * inclde an .eslintingore
 * inclde a .gitignore

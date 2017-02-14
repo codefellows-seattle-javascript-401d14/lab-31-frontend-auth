@@ -4,7 +4,7 @@ const angular = require('angular');
 
 angular.module('myApp')
 .component('login', {
-  template: require('../signup/signup.html'),
+  template: require('./login.html'),
   controllerAs: 'myloginCtrl',
   controller: ['$log', 'authService', '$window', function ($log, authService, $window){
     this.$onInit = () => {

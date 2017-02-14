@@ -2,7 +2,7 @@
 require('./scss/base.scss');
 const angular = require('angular');
 
-angular.modules('slugramApp', []);
+angular.module('slugramApp', []);
 
 require('./service/auth-service.js');
 

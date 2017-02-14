@@ -16,10 +16,12 @@ angular.module('slugramApp')
 
     return $http.post(url,user,config)
     .then(res => {
+      $log.log(url);
+      $log.log(user);
       $log.log('It worked');
       return res.data;
     })
-    .catch(err => $log.log(err));
+    .catch(err => $log.log(err,url));
   };
 
   authService.login = function(user){

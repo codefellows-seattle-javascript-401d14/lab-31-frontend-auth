@@ -1,5 +1,6 @@
 # lab-31 git ignore
 build
+.env
 
 # Created by https://www.gitignore.io/api/vim,windows,osx,linux,node,git
 

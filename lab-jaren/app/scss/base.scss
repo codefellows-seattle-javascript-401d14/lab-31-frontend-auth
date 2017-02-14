@@ -21,7 +21,7 @@ $pad: 1em;
   font-weight: normal;
   line-height: 1em;
   text-decoration: none;
-  color: $red-light;
+  color: $black;
   &:focus {
     outline: 0;
   }
@@ -34,7 +34,6 @@ html, body {
 }
 
 body {
-  background-color: $black;
   height: auto;
   padding: $pad * 2;
 }

@@ -4,6 +4,7 @@ const ExtractText = require('extract-text-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
+require('dotenv').load();
 module.exports = {
   devtool: 'eval',
   entry: `${__dirname}/app/entry.js`,

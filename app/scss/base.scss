@@ -1,0 +1,117 @@
+$brand-black: #000;
+$brand-darkblue: #000aaa;
+$brand-red:#FF1B19;
+$brand-white: #fff;
+$brand-beige: #B2A59B;
+$brand-orange: #FF8019;
+$brand-primary:#009AB2;
+$brand-sky:#A9F3FF;
+
+$brand-active:#a47;
+$brand-focus:#BEDD;
+$brand-error:#aAD;
+$brand-success:#FFE901;
+
+$pad: 0.7em;
+
+@mixin horizontal-center{
+  margin: 0 auto;
+}
+
+@mixin center-text {
+  margin: 0 auto;
+  text-align: center;
+}
+
+@mixin special-pad {
+  box-sizing: border-box;
+  padding: $pad;
+}
+
+@mixin bubble {
+  box-sizing: border-box;
+  padding:$pad;
+  border: 1px thin black;
+  border-radius: 0.4em;
+}
+
+@mixin highlight {
+  background-color: $brand-success;
+  color: $brand-darkblue;
+}
+
+reset
+* {
+  position: static;
+  width:100%;
+  margin: 0px;
+  text-decoration: none;
+  list-style: none;
+  padding:0px;
+  font-size: 1em;
+  line-height: 1em;
+  color: $brand-black;
+  &:focus {
+    outline: 0;
+  }
+}
+
+html, body {
+  position: relative;
+  height:100%;
+  font-family: helvetica;
+}
+
+body {
+  @include horizontal-center;
+  height: auto;
+  padding: $pad * 2;
+  background-color: $brand-orange;
+}
+
+h2 {
+  line-height: 2.5em;
+  font-weight: 300;
+  padding-right: $pad *2;
+}
+
+span {
+  color:$brand-red;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+p {
+  @include special-pad;
+  margin-left: $pad;
+  padding-left: $pad;
+}
+
+form {
+  font-size: 1.5em;
+  input {
+    @include bubble;
+    width: 20%;
+    border-radius: 0.8em;
+    margin: $pad *2;
+    &:focus {
+      border: 3px solid $brand-focus;
+    }
+  }
+}
+
+button {
+  @include bubble;
+ width: 50;
+ border: none;
+ background-color: $brand-sky;
+ color:$brand-black;
+ &:hover {
+   background-color: $brand-darkblue;
+   color:$brand-white;
+ }
+ &:active {
+   background-color: $brand-active;
+   color: $brand-success;
+ }
+}

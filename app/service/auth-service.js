@@ -3,7 +3,7 @@
 const angular = require('angular');
 
 angular.module('slugramApp')
-.service('authService','$q', ['$log','$http','$window', function($q,$log,$http, $window){
+.service('authService', ['$q','$log','$http','$window', function($q,$log,$http, $window){
   let authService ={};
 
   let saveToken = (token) => {

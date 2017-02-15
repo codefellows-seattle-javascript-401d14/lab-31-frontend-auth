@@ -1,0 +1,22 @@
+@import "../../scss/base.scss";
+
+.login {
+  @include horizontal-center;
+  width: 75%;
+  margin-top: $pad;
+  border: 3px solid $blue-light;
+  border-radius: 0.5em;
+  padding: $pad;
+  form {
+    input {
+      @include magic-bubble;
+      display: inline;
+      width: 49.5%;
+    }
+    button {
+      @include magic-bubble;
+      color: $white;
+      background-color: $blue-dark;
+    }
+  }
+}

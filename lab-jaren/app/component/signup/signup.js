@@ -1,5 +1,7 @@
 'use strict';
 
+require('./_signup.scss');
+
 require('angular').module('midigramApp')
 .component('signup', {
   template: require('./signup.html'),

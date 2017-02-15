@@ -1,6 +1,5 @@
 'use strict';
 
-
 require('angular').module('demoApp')
 .service('authService', ['$q', '$log', '$http', '$window', function($q, $log, $http, $window){
   let authService = {};
@@ -18,7 +17,6 @@ require('angular').module('demoApp')
       let base64 = $window.btoa(`${user.username}:${user.password}`);
       let config = {
         headers: {
-          'Content-Type': 'application/json',
           Accept: 'application/json',
           Authorization: `Basic ${base64}`,
         },

@@ -13,7 +13,7 @@ angular.module('myApp')
       this.handleSubmit = () => {
         authService.signup(this.user)
         .then(token => {
-          $window.alert('your token===>', token);
+          $window.alert(token);
           this.user = {username: '', password: '', email: '' };
 
         })

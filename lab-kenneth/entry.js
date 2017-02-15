@@ -4,7 +4,6 @@ require('./scss/base.scss');
 const angular = require('angular');
 const uiRouter = require('angular-ui-router');
 
-
 angular.module('myApp', [uiRouter])
 .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider){
   $urlRouterProvider.when('', '/');
@@ -22,12 +21,14 @@ angular.module('myApp', [uiRouter])
 
     },
   ];
+
   routes.forEach(route => $stateProvider.state(route));
 }]);
 
 //service
 require('./service/authservice-signup.js');
 require('./service/galleryservice.js');
+
 //components
 require('./component/landing');
 require('./component/signup');

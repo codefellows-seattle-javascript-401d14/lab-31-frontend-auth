@@ -1,11 +1,9 @@
 <div class="gallerylist">
 
-  <form novalidate ng-submit="galleryListCtrl.fetchAll()">
-
-    <button type="submit"> Fetch All Galleries</button>
-
-  </form>
-
-
-
+  <ul> 
+    <li ng-repeat="item in galleryListCtrl.gallerys track by $index"> 
+     <h3> {{ item.name }} </h3>
+     <p> {{ item.desc }} </p>
+    </li>
+  </ul>
 </div>

@@ -7,14 +7,12 @@ angular.module('myApp')
   template: require('./gallery-list.html'),
   controllerAs: 'galleryListCtrl',
   controller: ['$log', 'galleryService', function($log, galleryService){
-    console.log('skjvnfjvnkdfjvdkjnvfdkj bkdb');
     this.$onInit = () => {
-      // galleryService.fetchAll()
-      // .then(gallerys => [
-      //   this.gallerys = gallerys,
-      // ])
-      // .catch($log.error);
-
+       galleryService.fetchAll()
+       .then(gallerys => [
+         this.gallerys = gallerys,
+       ])
+       .catch($log.error);
     };
   }],
 });

@@ -3,8 +3,40 @@
 const angular = require('angular');
 
 angular.module('slugramApp')
-.service('authService', ['$log','$http','$window', function($log,$http, $window){
+.service('authService','$q', ['$log','$http','$window', function($q,$log,$http, $window){
   let authService ={};
+
+  let saveToken = (token) => {
+    if(!token) return $q.reject('no token');
+    try {
+      $window.localStorage.token = JSON.stringify(token);
+      authService.token = token;
+      return $q.resolve(token);
+    } catch(err) {
+      return $q.reject(err);
+    }
+  };
+
+  authService.fetchToken = () => {
+    if(authService.token)
+      return $q.resolve(authService.token);
+    try {
+      let token = JSON.parse($window.localStorage.token);
+      return $q.resolve(token);
+    } catch(err) {
+      return $q.reject(err);
+    }
+  };
+
+  authService.logout = () => {
+    try {
+      delete $window.localStorage.token;
+      delete authService.token;
+      return $q.resolve();
+    } catch(err) {
+      return $q.reject(err);
+    }
+  };
   authService.signup = function(user){
     let url = `${__API_URL__}/api/signup`;
     let config = {
@@ -19,7 +51,7 @@ angular.module('slugramApp')
       $log.log(url);
       $log.log(user);
       $log.log('It worked');
-      return res.data;
+      return saveToken(res.data);
     })
     .catch(err => $log.log(err,url));
   };
@@ -36,7 +68,7 @@ angular.module('slugramApp')
     };
     return $http.get(url,config)
     .then(res => {
-      return res.data;
+      return saveToken(res.data);
     })
     .catch(err => $log.log(err));
   };

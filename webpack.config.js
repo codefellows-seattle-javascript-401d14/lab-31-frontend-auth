@@ -5,7 +5,7 @@ const HTMLPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 require('dotenv').load();
-console.log(process.env.API_URL);
+
 module.exports = {
   devtool: 'eval',
   entry: `${__dirname}/app/entry.js`,

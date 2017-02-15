@@ -9,7 +9,6 @@ require('angular').module('demoApp')
       this.user = { username: '', password: ''};
 
       this.handleSubmit = () => {
-        console.log('anythingreally', this.user);
         authService.login(this.user)
         .then(token => {
           $window.alert(`token ${token}`);

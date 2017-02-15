@@ -4,6 +4,40 @@ require('angular').module('demoApp')
 .service('authService', ['$q', '$log', '$http', '$window', function($q, $log, $http, $window){
   let authService = {};
 
+  let saveToken = (token) => {
+    if (!token) return $q.reject('no token');
+    try {
+      $window.localStorage.token = JSON.stringify(token);
+      authService.token = token;
+      return $q.resolve(token);
+    } catch (err) {
+      return $q.reject(err);
+    }
+  };
+
+  authService.fetchToken = () => {
+    if(authService.token)
+      return $q.resolve(authService.token);
+
+    try {
+      let token = JSON.parse($window.localStorage.token);
+      return $q.resolve(token);
+    } catch (err) {
+      return $q.reject(err);
+    }
+  };
+
+  authService.logout = () => {
+    try {
+      delete $window.localStorage.token;
+      delete authService.token;
+      return $q.resolve();
+    } catch(err) {
+      return $q.reject(err);
+    }
+  };
+
+
   authService.signup = function(user){
     let url = `${__API_URL__}/api/signup`;
     let config = {
@@ -16,7 +50,7 @@ require('angular').module('demoApp')
     return $http.post(url, user, config)
     .then(res => {
       $log.log('succecss');
-      return res.data;
+      return saveToken(res.data);
     });
   };
 
@@ -33,7 +67,7 @@ require('angular').module('demoApp')
     return $http.get(url, config)
     .then(res => {
       $log.log('success');
-      return res.data;
+      return saveToken(res.data);
     });
   };
   return authService;

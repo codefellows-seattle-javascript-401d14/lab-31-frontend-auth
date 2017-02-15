@@ -1,0 +1,25 @@
+@import "../../scss/base.scss";
+
+.signup {
+  form {
+    @include horizontal-center;
+    width: 50%;
+    margin-bottom: $pad;
+    input {
+      @include magic-bubble;
+      width: 45%;
+      &:focus {
+        border: 2px solid $purple-light;
+      }
+    }
+    button {
+      @include magic-bubble;
+      width: 45%;
+      &:active {
+        color: $purple-light;
+        background-color: $purple-dark;
+        border-color: $purple-medium;
+      }
+    }
+  }
+}

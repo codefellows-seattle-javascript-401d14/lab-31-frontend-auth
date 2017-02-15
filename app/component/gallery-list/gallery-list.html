@@ -1,0 +1,12 @@
+<div class="gallery">
+  <h2> galleries </h2>
+  <form novalidate ng-submit="galleryListCtrl.handleSubmit()">
+  <button type="submit"> get</button>
+  <ol>
+    <li ng-repeat="value in galleryListCtrl.galleries track by $index">
+      <h3>{{value.title}}</h3>
+      <p>{{value.desc}}</p>
+    </li>
+  </ol>
+</form>
+</div>

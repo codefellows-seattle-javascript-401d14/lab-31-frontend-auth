@@ -1,0 +1,67 @@
+$blue-light: #1ef3ed;
+$blue-medium: #0abab5;
+$blue-dark: #0a93ba;
+$lime-light: #6fdc6f;
+$lime-medium: #32CD32;
+$lime-dark: #196619;
+$light-gray: #eee;
+$gray: #444;
+$black: #000;
+
+$pad: 2em;
+
+@mixin horizontal-center {
+  margin: 0 auto;
+}
+
+@mixin magic-bubble {
+  padding: $pad;
+  border-radius: 1em;
+}
+
+* {
+  position: static;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-size: 2vw;
+  font-weight: normal;
+  line-height: 1em;
+  text-decoration: none;
+  color: $blue-light;
+  &:focus {
+    outline: 0;
+  }
+  box-sizing: border-box;
+}
+
+html, body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background-color: $black;
+  height: auto;
+  padding: $pad * 2;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: (7 - $i) * 0.3 * 1em;
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  margin-bottom: $pad;
+  margin-top: $pad;
+}
+
+ul, ol {
+  margin-left: $pad;
+  margin-right: $pad;
+}

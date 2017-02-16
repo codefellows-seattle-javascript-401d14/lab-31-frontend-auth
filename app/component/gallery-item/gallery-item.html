@@ -1,0 +1,9 @@
+
+<div class="gallery-item">
+<li>
+  <h3> {{ galleryItemCtrl.gallery.name }} </h3>
+  <p> {{ galleryItemCtrl.gallery.desc }} </p>
+  <button ng-click="galleryItemCtrl.handleDelete(galleryItemCtrl.gallery)"> Delete </button>
+  <gallery-update gallery="galleryItemCtrl.gallery" handle-submit="galleryItemCtrl.handleUpdate" />
+</li>
+</div>

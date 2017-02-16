@@ -1,67 +1,167 @@
-$blue-light: #1ef3ed;
-$blue-medium: #0abab5;
-$blue-dark: #0a93ba;
-$lime-light: #6fdc6f;
-$lime-medium: #32CD32;
-$lime-dark: #196619;
-$light-gray: #eee;
-$gray: #444;
-$black: #000;
+@import  "theme";
 
-$pad: 2em;
+@mixin base {
+  body, body * {
+    width: 100%;
+    box-sizing: border-box;
+    color: $c-grey;
+    font-size: 4vw;
+    font-family: sans-serif;;
+    font-stretch: extra-condensed;
+    margin-bottom: $s-margin-bottom;
 
-@mixin horizontal-center {
-  margin: 0 auto;
-}
+    @media screen and (min-width: 400px){
+      font-size: 3vw;
+    }
 
-@mixin magic-bubble {
-  padding: $pad;
-  border-radius: 1em;
-}
+    @media screen and (min-width: 720px){
+      font-size: 2vw;
+    }
 
-* {
-  position: static;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-  font-size: 2vw;
-  font-weight: normal;
-  line-height: 1em;
-  text-decoration: none;
-  color: $blue-light;
-  &:focus {
-    outline: 0;
+    @media screen and (min-width: 1000px){
+      font-size: 1.5vw;
+    }
+
+    @media screen and (min-width: 1400px){
+      font-size: 1vw;
+    }
   }
-  box-sizing: border-box;
-}
 
-html, body {
-  position: relative;
-  height: 100%;
-}
-
-body {
-  background-color: $black;
-  height: auto;
-  padding: $pad * 2;
-}
-
-@for $i from 1 through 6 {
-  h#{$i} {
-    font-size: (7 - $i) * 0.3 * 1em;
+  body {
+    padding: $s-pad * 4.1;
   }
-}
 
-h1 {
-  text-align: center;
-}
+  button, a , input, select {
+    transition: color 500ms, background-color 500ms;
+  }
 
-p {
-  margin-bottom: $pad;
-  margin-top: $pad;
-}
+  a {
+    font-weight: bolder;
+    color: $c-primary;
 
-ul, ol {
-  margin-left: $pad;
-  margin-right: $pad;
+    &:hover {
+      color: $c-black;
+    }
+  }
+
+
+  h1,h2,h3,h4,h5,h6 {
+    color: $c-black;
+  }
+
+  @include headingRatio(1.4);
+
+  blockquote {
+    border-left: $s-pad solid $c-greylight;
+    padding-left: $s-pad;
+  }
+
+  strong {
+    font-weight: bolder;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  ul, ol {
+    margin-left: $s-pad * 2;
+    padding-left: $s-pad * 2;
+    color: $c-black;
+
+    ul {
+      list-style: circle;
+    }
+
+    ol {
+      list-style: lower-roman;
+    }
+  }
+
+  ul {
+    list-style: initial;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  code, blockquote, pre, ul, ol, li, input, textarea {
+    font-family: monospace;
+    a {
+      font-family: monospace;
+    }
+  }
+
+
+  button, input, textarea, form * {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    color: $c-black;
+    font-weight: bolder;
+    background-color: $c-greylight;
+    cursor: pointer;
+    @include border;
+
+    &:hover {
+      background-color: $c-greylight * 0.7;
+    }
+
+    &:active{
+      background-color: $c-greylight * 0.5;
+    }
+  }
+
+  input[type="submit"] {
+    @extend button;
+  }
+
+  label {
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 2em;
+  }
+
+  input {
+    @include border;
+  }
+
+  select {
+    @extend button;
+    border-radius: 0px;
+  }
+
+  textarea {
+    width: 100%;
+    resize: none;
+    height: auto;
+    font-size: 1.25em;
+    padding: $s-pad * 2;
+    @include border;
+  }
+
+  @media screen and (min-width: 480px){
+    @include headingRatio(1.1);
+  }
+
+  @media screen and (min-width: 720px){
+    @include headingRatio(0.8);
+  }
+
+  @media screen and (min-width: 800px){
+    @include headingRatio(0.6);
+    body {
+      width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media screen and (min-width: 1500px){
+    @include headingRatio(0.4);
+  }
 }

@@ -25,6 +25,26 @@ require('angular').module('demoApp')
     });
   };
 
+  galleryService.update = (gallery) => {
+    let url = `${__API_URL__}/api/gallery/${gallery._id}`;
+    let config = {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    };
+
+    return authService.fetchToken()
+    .then(token => {
+      config.headers.Authorization = `Bearer ${token}`;
+      return $http.put(url, gallery, config);
+    })
+    .then(res => {
+      $log.log('post /api/gallery success');
+      return res.data;
+    });
+  };
+
   galleryService.fetchAll = () => {
     let url = `${__API_URL__}/api/gallery`;
     let config = {
@@ -33,6 +53,7 @@ require('angular').module('demoApp')
         Accept: 'application/json',
       },
     };
+
     return authService.fetchToken()
     .then(token => {
       config.headers.Authorization = `Bearer ${token}`;
@@ -45,5 +66,23 @@ require('angular').module('demoApp')
     });
   };
 
+  galleryService.delete = (gallery) => {
+    let url = `${__API_URL__}/api/gallery/${gallery._id}`;
+    let config = {
+      headers: {
+        Accept: 'application/json',
+      },
+    };
+    return authService.fetchToken()
+    .then(token => {
+      config.headers.Authorization = `Bearer ${token}`;
+      return $http.delete(url, config);
+    })
+    .then(res => {
+      $log.log('delete /api/gallery success');
+
+      return res.data;
+    });
+  };
   return galleryService;
 }]);

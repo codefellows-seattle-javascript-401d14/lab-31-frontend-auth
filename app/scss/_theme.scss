@@ -1,0 +1,67 @@
+* {
+  background-color: black;
+}
+
+// color vars
+$c-black: #45b9eb;
+$c-white: #da0ac5;
+$c-greydark: #e91dc3;
+$c-grey: #444;
+$c-greylight: #ed009d;
+$c-primary: #01ddeb;
+$c-success: #7fa;
+$c-error: #f8a;
+
+// space vars
+$s-pad: 0.5em;
+$s-margin-bottom: 0.5em;
+
+// theme mixins
+@mixin border {
+  border: 0.15em solid black;
+}
+
+@mixin headingRatio($scale){
+  @function headingMagic($num) {
+    @return ( 8 - ($num * 0.8));
+  }
+
+  @for $i from 1 through 6 {
+    h#{$i} {
+      font-size: headingMagic($i) * $scale * 1vw;
+      a {
+        font-size: headingMagic($i) * $scale * 1vw;
+      }
+      margin-bottom: $i / 6 * 0.5em;;
+    }
+  }
+}
+
+// theme classes
+.bubble {
+  padding: $s-pad;
+}
+
+.primary {
+  background-color: $c-primary;
+}
+
+.success {
+  background-color: $c-success;
+}
+
+.error {
+  background-color: $c-error;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}

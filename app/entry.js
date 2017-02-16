@@ -1,5 +1,6 @@
 'use strict';
 
+require('./scss/main.scss');
 const angular = require('angular');
 
 const uiRouter = require('angular-ui-router');
@@ -17,19 +18,20 @@ angular.module('demoApp', [uiRouter])
     {
       name: 'gallery',
       url: '/gallery',
-      template: '<gallery />',
+      template: '<gallery-container />',
     },
   ];
 
   routes.forEach(route => $stateProvider.state(route));
 }]);
 
-
-require('./component/gallery');
 require('./component/gallery-create');
-require('./component/gallery-list');
+require('./component/gallery-item');
 require('./service/auth-service.js');
 require('./service/gallery-service.js');
+require('./component/gallery-container'); // smart parent (stateful)
+require('./component/gallery-create'); // dumb child      (presintation)   // dumb child
+require('./component/gallery-update'); // dumb child
 require('./component/landing');
 require('./component/signup');
 require('./component/login');

@@ -1,9 +1,9 @@
 'use strict';
 
 require('angular').module('demoApp')
-.component('galleryCreate', {
-  template: require('./gallery-create.html'),
-  controllerAs: 'galleryCreateCtrl',
+.component('galleryUpdate', {
+  template: require('./gallery-update.html'),
+  controllerAs: 'galleryUpdateCtrl',
   bindings: {
     gallery: '<',
     handleSubmit: '<',

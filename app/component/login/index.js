@@ -4,7 +4,7 @@ require('angular').module('demoApp')
 .component('login', {
   template: require('./login.html'),
   controllerAs: 'loginCtrl',
-  controller: ['$log', 'authService', '$window', function($log, authService){
+  controller: ['$log', 'authService', '$location', function($log, authService, $location){
     this.$onInit = () => {
       this.user = { username: '', password: ''};
 
@@ -13,6 +13,7 @@ require('angular').module('demoApp')
         .then(token => {
           $log.log(`token ${token}`);
           this.user = { username: '', password: ''};
+          $location.path('/gallery');
         })
         .catch(() => {
           $log.error('dang');

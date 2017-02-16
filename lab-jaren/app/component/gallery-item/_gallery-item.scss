@@ -1,20 +1,20 @@
 @import "../../scss/base.scss";
 
-.gallery-list {
+.gallery-item {
   @include horizontal-center;
   width: 80%;
   margin-top: $pad;
-  form {
-    border: 3px double $green-light;
-    border-radius: 0.5em;
-    padding: $pad;
+  li {
+    margin-top: $pad;
+    position: relative;
     button {
       @include magic-bubble;
+      position: absolute;
       color: $white;
       background-color: $green-dark;
-    }
-    ul {
-      margin-top: $pad;
+      width: 20%;
+      top: 0;
+      right: 0;
     }
   }
 }

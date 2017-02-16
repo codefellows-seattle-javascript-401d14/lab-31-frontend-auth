@@ -25,9 +25,10 @@ angular.module('midigramApp', [uiRouter])
 require('./service/auth-service.js');
 require('./service/gallery-service.js');
 
-require('./component/landing/landing.js');
-require('./component/signup/signup.js');
-require('./component/login/login.js');
-require('./component/gallery/gallery.js');
-require('./component/gallery-create/gallery-create.js');
-require('./component/gallery-list/gallery-list.js');
+require('./component/landing');
+require('./component/signup');
+require('./component/login');
+require('./component/gallery-container'); // smart parent (stateful)
+require('./component/gallery-create'); // dumb child (presentation)
+require('./component/gallery-item');   // dumb child
+require('./component/gallery-update'); // dumb child

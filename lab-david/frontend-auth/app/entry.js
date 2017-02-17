@@ -1,7 +1,7 @@
 'use strict';
 
 const angular = require('angular');
-const uiRouter = require('angualr-ui-Router');
+const uiRouter = require('angular-ui-router');
 
 require('angular').module('breweryApp', []);
 

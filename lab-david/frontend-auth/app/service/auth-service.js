@@ -1,6 +1,6 @@
 'use strict';
 
-require('angular').module('demoApp')
+require('angular').module('breweryApp')
 .service('authService', ['$q', '$log', '$http', '$window', function($q, $log, $http, $window){
   let authService = {};
 

@@ -1,21 +1,21 @@
 'use strict';
 
 require('angular').module('breweryApp')
-.component('signup', {
-  template: require('./signup.html'),
-  controllerAs: 'signupCtrl',
+.component('login', {
+  template: require('./signin.html'),
+  controllerAs: 'loginCtrl',
   controller: ['$log', 'authService', '$window', function($log, authService, $window){
     this.$onInit = () => {
-      this.user = { username: '', password: '', email: '' };
+      this.user = { username: '', password: ''};
 
       this.handleSubmit = () => {
-        authService.signup(this.user)
+        authService.login(this.user)
         .then(token => {
           $window.alert(`token ${token}`);
-          this.user = { username: '', password: '', email: '' };
+          this.user = { username: '', password: ''};
         })
         .catch(() => {
-          $window.alert('No Beer for You!');
+          $window.alert('Not Any Good');
         });
       };
     };

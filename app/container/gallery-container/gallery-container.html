@@ -1,7 +1,20 @@
-<div class="gallery">
-  <form novalidate ng-submit="galleryCreateCtrl.handleSubmit()">
-    <input type="text" ng-model="galleryCreateCtrl.gallery.title" placeholder="title">
-    <input type="text" ng-model="galleryCreateCtrl.gallery.desc" placeholder="desc">
-    <button type="submit"> Create Gallerino! </button>
-  </form>
-</div>
+<div class="gallery-container">
+   <h1> gallery page </h1>
+   <gallery-create
+     gallery="galleryCtrl.createFormGallery"
+     handle-submit="galleryCtrl.createHandleSubmit">
+   </gallery-create>
+
+   <ul>
+     <gallery-item
+       ng-repeat="item in galleryCtrl.gallerys track by $index"
+       gallery="item"
+       ng-if="item != galleryCtrl.selected"
+       handle-delete="galleryCtrl.itemHandleDelete"
+       handle-select="galleryCtrl.itemHandleSelect"
+       handle-update="galleryCtrl.updateHandleSubmit">
+     </gallery-item>
+   </ul>
+
+   <photo-container gallery="galleryCtrl.selected"> </photo-container>
+ </div>

@@ -1,0 +1,21 @@
+@import  "../../scss/_theme.scss";
+
+.gallery-item {
+  position: relative;
+  border: 2px solid $c-black;
+  padding: $s-pad;
+
+  .btn-delete {
+    position: absolute;
+    display: inline-block;
+    width: auto;
+    top: $s-pad;
+    right: $s-pad;
+  }
+
+  .btn-select {
+    @extend .btn-delete;
+    top: 6 * $s-pad;
+  }
+
+}

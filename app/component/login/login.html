@@ -1,7 +1,10 @@
 <div class="login">
-  <form novalidate ng-submit="loginCtrl.handleSubmit()">
+  <form novalidate
+     ng-submit="loginCtrl.handleSubmit()">
+
     <input type="text" ng-model="loginCtrl.user.username" placeholder="username">
     <input type="password" ng-model="loginCtrl.user.password" placeholder="password">
-    <button type="submit"> Log in </button>
+
+    <input type="submit" value="LOGIN">
   </form>
 </div>

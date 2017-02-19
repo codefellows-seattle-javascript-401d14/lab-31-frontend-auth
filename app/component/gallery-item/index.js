@@ -1,5 +1,9 @@
 'use strict';
 
+require('./_gallery-item.scss');
+
+// CHILD COMPONENT
+
 require('angular').module('demoApp')
 .component('galleryItem', {
   template: require('./gallery-item.html'),
@@ -8,5 +12,6 @@ require('angular').module('demoApp')
     gallery: '<',
     handleDelete: '<',
     handleUpdate: '<',
+    handleSelect: '<',
   },
 });

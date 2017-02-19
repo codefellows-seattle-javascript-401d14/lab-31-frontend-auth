@@ -1,0 +1,12 @@
+@import "../../scss/_theme.scss";
+
+.photo-upload {
+  .file-select {
+    padding: $s-pad;
+    border: 2px solid $c-black;
+    background-color: $c-greylight;
+    color: $c-black;
+    text-align: center;
+    font-weight: bolder;
+  }
+}

@@ -17,5 +17,23 @@ require('angular').module('demoApp')
       return res.data;
     });
   };
+
+  authService.login = function(user){
+    let url = `${__API_URL__}/api/login`;
+    let authtext = user.username + ':' + user.password;
+    let config = {
+      headers: {
+        Authorization: 'Basic ${$window.btoa(authtext)}',
+        Accept: 'applicaton/json',
+      },
+    };
+
+    return $http.get(url, config)
+  .then(res => {
+    $log.log('success');
+    return res.data;
+  });
+  };
+
   return authService;
 }]);

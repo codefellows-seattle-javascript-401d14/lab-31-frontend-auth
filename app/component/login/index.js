@@ -13,7 +13,7 @@ require('angular').module('demoApp')
           alert(`token ${token}`);
           this.user = {username: '', password: ''};
         })
-        .catch('could not login');
+        .catch($log.error);
       };
     };
   }],

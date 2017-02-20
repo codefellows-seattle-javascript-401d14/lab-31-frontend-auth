@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Sanderson239/lab-31-frontend-auth#readme",
   "dependencies": {
     "angular": "^1.6.2",
+    "angular-ui-router": "^0.4.2",
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.0",
     "babel-preset-es2015": "^6.22.0",

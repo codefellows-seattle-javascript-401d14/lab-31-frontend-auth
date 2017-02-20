@@ -1,0 +1,16 @@
+<div class="gallery-container">
+<h1> gallery page </h1>
+<gallery-create gallery="galleryCtrl.createFormGallery" handle-submit="galleryCtrl.createHandleSubmit"></gallery-create>
+
+<ul>
+<gallery-item
+ng-repeat="item in galleryCtrl.gallerys track by $index"
+gallery="item"
+ng-if="item != galleryCtrl.selected"
+handle-select="galleryCtrl.itemHandleSelect"
+handle-delete="galleryCtrl.itemHandleDelete"
+handle-update="galleryCtrl.updateHandleSubmit">
+</gallery-item>
+</ul>
+<photo-container gallery="galleryCtrl.selected"><photo-container>
+</div>

@@ -1,18 +1,13 @@
 'use strict';
 require('./scss/main.scss');
-// You have to require angular first
-const angular = require('angular');
 
-// then you require in you 3rd party modules
+const angular = require('angular');
 const uiRouter = require('angular-ui-router');
 const ngFileUpload = require('ng-file-upload');
 
-// then create an angular module and ineject in your 3rd party modules
 angular.module('demoApp', [uiRouter, ngFileUpload])
 .config(['$stateProvider', '$urlRouterProvider',  function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.when('', '/');
-  // setup our routes
-  // landing route
   let routes = [
     {
       name: 'home',
@@ -22,20 +17,28 @@ angular.module('demoApp', [uiRouter, ngFileUpload])
     {
       name: 'gallery',
       url: '/gallery',
-      template: '<gallery />',
+      template: './component/gallery-container/index.html',
     },
   ];
 
   routes.forEach(route => $stateProvider.state(route));
 }]);
 
+// require services
 require('./service/auth-service.js');
-// require('./service/gallery-service.js');
+require('./service/photo-service.js');
+require('./service/gallery-service.js');
+
+// require containers
+require('./container/gallery-container');
+require('./container/photo-container');
 
 // require components
 require('./component/landing');
 require('./component/signup');
 require('./component/login');
-// require('./component/gallery');
-// require('./component/gallery-create');
-// require('./component/gallery-list');
+require('./component/gallery-create');
+require('./component/gallery-item');
+require('./component/gallery-update');
+require('./component/photo-upload');
+require('./component/photo-item');

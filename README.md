@@ -1,39 +1,26 @@
-![cf](http://i.imgur.com/7v5ASc8.png) lab-27-slugram
-====
+# Lab-31-34 frontend-auth
 
-# To Submit this Assignment
-* fork this repository
-* write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-duncan`
-* push to your repository
-* submit a pull request to this repository
-* submit a link to your PR in canvas
-* write a question and observation on canvas
+## Angular
 
-# Directions
-* inclde an .eslintrc
-* inclde an .eslintingore
-* inclde a .gitignore
- * ignore the build directory
-* include a package.json
- * must have watch script 
-* inclde a webpack.config.js
- * include all the production configurations
-* Create these directories to organize your code: 
- * app
- * app/scss
- * app/service
- * app/component
- * app/component/\<your-component-dir\>
-* create a **bass.scss** file 
+### entry.js
+  - Contains routes utilizing uiRouter to jump from login/signup page to gallery
+  - Loads services, components, container
 
-## Requirements
-* create a landing component
-  * with a template containing your signup and login components
-* create a signup component
-  * should have its own controller and use controllerAs syntax
-  * should have a form with username, email, and password
-  * should use the auth service to signup
-* create a login component
-  * should have its own controller and use controllerAs syntax
-  * should have a form with username and password
-  * should use the auth service to login 
+### Front-end components
+  - Contains the components for landing page, signup, login. Galleries and photos are in containers and presentation components
+#### Containers
+  - Containers created for photo and gallery that connect to galleryctrl and photoctrl services respectively
+  - Parent elements responsible for populating their respective child (presentation) elements
+#### Presenters
+  - Gallery-create, gallery-item, gallery-update, photo-item, and photo-upload are all in separate containers.
+  - Each serves a single function and is connected to their container.
+  - Child-parent relationships among angular items apply.
+
+### Services
+  - Three services created to handle site functionality.
+  - Auth-service handles signup and login.
+  - Gallery-service allows user to create, delete, and edit gallery items.
+  - Photo service enables user to upload photos.
+
+### SCSS and Backend
+  - SCSS and Backend created using lecture code provided by Duncan.

@@ -6,19 +6,16 @@ require('angular').module('midigramApp')
 .component('signup', {
   template: require('./signup.html'),
   controllerAs: 'signupCtrl',
-  controller: ['$log', 'authService', '$window', function($log, authService, $window) {
+  controller: ['$log', 'authService', '$location', function($log, authService, $location) {
     this.$onInit = () => {
       this.user = {username: '', password: '', email: ''};
-
       this.handleSubmit = () => {
         authService.signup(this.user)
-        .then(token => {
-          $window.alert(`token ${token}`);
+        .then(() => {
           this.user = {username: '', password: '', email: ''};
+          $location.path('/gallery');
         })
-        .catch(() => {
-          $window.alert('dang');
-        });
+        .catch($log.error);
 
       };
     };

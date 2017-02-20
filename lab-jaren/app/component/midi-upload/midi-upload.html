@@ -1,0 +1,11 @@
+<div class="midi-upload">
+  <form novalidate ng-submit="midiUploadCtrl.handleSubmit()">
+    <input ng-model="midiUploadCtrl.midi.title" placeholder="title">
+    <div class="file-select"
+      ngf-select
+      ng-model="midiUploadCtrl.midi.file">
+      Select File
+    </div>
+    <button type="submit">Upload</button>
+  </form>
+</div>

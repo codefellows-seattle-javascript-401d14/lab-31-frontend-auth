@@ -10,5 +10,6 @@ require('angular').module('midigramApp')
     gallery: '<',
     handleDelete: '<',
     handleUpdate: '<',
+    handleSelect: '<',
   },
 });

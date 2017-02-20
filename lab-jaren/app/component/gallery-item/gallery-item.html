@@ -1,8 +1,16 @@
 <div class="gallery-item">
   <li>
-    <h3>{{galleryItemCtrl.gallery.title}}</h3>
+    <h3 ng-dblclick="galleryItemCtrl.showUpdate = !galleryItemCtrl.showUpdate">
+      {{galleryItemCtrl.gallery.title}}</h3>
     <p>{{galleryItemCtrl.gallery.description}}</p>
-    <button ng-click="galleryItemCtrl.handleDelete(galleryItemCtrl.gallery)">DEL</button>
-    <gallery-update gallery="galleryItemCtrl.gallery" handle-submit="galleryItemCtrl.handleUpdate"></gallery-update>
+    <button class="btn-delete"
+      ng-click="galleryItemCtrl.handleDelete(galleryItemCtrl.gallery)">DEL</button>
+    <button class="btn-select"
+      ng-click="galleryItemCtrl.handleSelect(galleryItemCtrl.gallery)">SEL</button>
+    <gallery-update
+      ng-if="galleryItemCtrl.showUpdate"
+      gallery="galleryItemCtrl.gallery"
+      handle-submit="galleryItemCtrl.handleUpdate">
+    </gallery-update>
   </li>
 </div>

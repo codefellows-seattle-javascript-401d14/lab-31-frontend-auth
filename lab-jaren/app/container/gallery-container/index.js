@@ -1,7 +1,9 @@
 'use strict';
 
+require('./_gallery-container.scss');
+
 require('angular').module('midigramApp')
-.component('gallery', {
+.component('galleryContainer', {
   template: require('./gallery-container.html'),
   controllerAs: 'galleryCtrl',
   controller: ['$log', 'galleryService', function($log, galleryService) {
@@ -9,6 +11,7 @@ require('angular').module('midigramApp')
       galleryService.fetchAll()
       .then(galleries => {
         this.galleries = galleries;
+        this.selected = this.galleries[0];
       })
       .catch($log.error);
 
@@ -30,10 +33,14 @@ require('angular').module('midigramApp')
         .catch($log.error);
       };
 
+      this.itemHandleSelect = (gallery) => {
+        this.selected = gallery;
+      };
+
       this.updateHandleSubmit = (gallery) => {
         galleryService.update(gallery)
         .then(gallery => {
-          
+
         })
         .catch($log.error);
       };

@@ -1,20 +1,32 @@
 @import "../../scss/base.scss";
 
 .gallery-item {
-  @include horizontal-center;
-  width: 80%;
-  margin-top: $pad;
-  li {
-    margin-top: $pad;
-    position: relative;
-    button {
-      @include magic-bubble;
-      position: absolute;
-      color: $white;
-      background-color: $green-dark;
-      width: 20%;
-      top: 0;
-      right: 0;
-    }
+  position: relative;
+  border: 2px solid $black;
+  padding: $pad;
+  // li {
+  //   margin-top: $pad;
+  //   position: relative;
+  //   button {
+  //     @include magic-bubble;
+  //     position: absolute;
+  //     color: $white;
+  //     background-color: $green-dark;
+  //     width: 20%;
+  //     top: 0;
+  //     right: 0;
+  //   }
+  // }
+  .btn-delete {
+    position: absolute;
+    display: inline-block;
+    width: auto;
+    top: $pad;
+    right: $pad;
+  }
+
+  .btn-select {
+    @extend .btn-delete;
+    top: 4 * $pad;
   }
 }

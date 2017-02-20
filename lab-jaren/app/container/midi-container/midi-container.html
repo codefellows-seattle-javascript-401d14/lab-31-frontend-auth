@@ -1,0 +1,13 @@
+<div class="midi-container">
+  <h2>Selected Gallery: {{midiContainerCtrl.gallery.title}}</h2>
+  <midi-upload
+    midi="midiContainerCtrl.uploadMidi"
+    handle-submit="midiContainerCtrl.uploadHandleSubmit">
+  </midi-upload>
+  <ul>
+    <midi-item
+      ng-repeat="item in midiContainerCtrl.gallery.midis track by $index"
+      midi="item">
+    </midi-item>
+  </ul>
+</div>

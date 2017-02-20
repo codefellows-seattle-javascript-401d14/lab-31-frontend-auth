@@ -4,7 +4,7 @@ require('angular').module('registerApp')
 .component('login', {
   template: require('./login.html'),
   controllerAs: 'loginCtrl',
-  controller: [ '$log', 'authService', function($log, authService){
+  controller: [ '$log', 'authService', '$location', function($log, authService, $location){
     this.$onInit = () => {
       this.user = {username: '', password: ''};
       this.handleSubmit = () => {
@@ -12,6 +12,7 @@ require('angular').module('registerApp')
         .then(token => {
           alert(`token ${token}`);
           this.user = {username: '', password: ''};
+          $location.path('/gallery');
         })
         .catch($log.error);
       };

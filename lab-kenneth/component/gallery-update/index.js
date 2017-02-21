@@ -3,11 +3,11 @@
 const angular = require('angular');
 
 angular.module('myApp')
-.component('createGallery', {
-  template: require('./gallerycreateindex.html'),
-  controllerAs: 'createGalleryCtrl',
+.component('galleryUpdate', {
+  templete: require('./gallery-update.html'),
+  controllerAs: 'galleryUpdateCtrl',
   bindings: {
     gallery: '<',
     handleSubmit: '<',
-  },
+  },  
 });

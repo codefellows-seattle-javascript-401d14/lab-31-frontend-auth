@@ -3,8 +3,9 @@
 require('./scss/base.scss');
 const angular = require('angular');
 const uiRouter = require('angular-ui-router');
+const ngFileUpload = require('ng-file-upload');
 
-angular.module('myApp', [uiRouter])
+angular.module('myApp', [uiRouter, ngFileUpload])
 .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider){
   $urlRouterProvider.when('', '/');
 
@@ -28,11 +29,19 @@ angular.module('myApp', [uiRouter])
 //service
 require('./service/authservice-signup.js');
 require('./service/galleryservice.js');
+require('./service/photoservice.js');
+
 
 //components
-require('./component/landing');
-require('./component/signup');
-require('./component/login');
-require('./component/gallery');
 require('./component/gallery-create');
-require('./component/gallery-list');
+require('./component/gallery-item');
+require('./component/gallery-update');
+require('./component/landing');
+require('./component/photo-upload');
+require('./component/photo-item');
+require('./component/login');
+require('./component/signup');
+
+//containers
+require('./container/gallery-container');
+require('./container/photo-container');

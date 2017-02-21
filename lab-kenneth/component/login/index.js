@@ -6,14 +6,14 @@ angular.module('myApp')
 .component('login', {
   template: require('./login.html'),
   controllerAs: 'myloginCtrl',
-  controller: ['$log', 'authService', '$window', function ($log, authService, $window){
+  controller: ['$log', 'authService', '$window', '$location', function ($log, authService, $window, $location){
     this.$onInit = () => {
       this.user = {username: '', password: ''};
 
       this.handleSubmit = () => {
         authService.login(this.user)
-        .then(token => {
-          $window.alert(token);
+        .then(() => {
+          $location.path('/gallery');
           this.user = {username:'', password:''};
         })
         .catch(() => {

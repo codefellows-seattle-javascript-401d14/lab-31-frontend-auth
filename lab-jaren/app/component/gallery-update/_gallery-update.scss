@@ -1,0 +1,18 @@
+@import "../../scss/base.scss";
+
+.gallery-update {
+  padding-top: $pad;
+  form {
+    input {
+      display: inline;
+      width: 40%;
+    }
+    button {
+      @include magic-bubble;
+      position: static;
+      color: $white;
+      background-color: $green-dark;
+      width: 20%;
+    }
+  }
+}

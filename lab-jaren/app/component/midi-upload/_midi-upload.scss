@@ -1,0 +1,17 @@
+@import "../../scss/base.scss";
+
+.midi-upload {
+  input {
+    @include magic-bubble;
+  }
+  .file-select {
+    padding: $pad;
+    margin-top: $pad;
+    margin-bottom: $pad;
+    border: 2px solid $green-light;
+    background-color: $black;
+    color: $green-light;
+    text-align: center;
+    font-weight: bolder;
+  }
+}

@@ -1,0 +1,23 @@
+@import "../../scss/base.scss";
+
+.gallery-create {
+  @include horizontal-center;
+  width: 75%;
+  margin-top: $pad;
+  border: 3px solid $green-light;
+  border-radius: 0.5em;
+  padding: $pad;
+  form {
+    padding: $pad;
+    input {
+      @include magic-bubble;
+      display: inline-block;
+      width: 80%;
+    }
+    button {
+      @include magic-bubble;
+      color: $white;
+      background-color: $green-dark;
+    }
+  }
+}

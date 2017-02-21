@@ -8,5 +8,6 @@ require('angular').module('slugramApp')
     gallery: '<',
     handleDelete: '<',
     handleUpdate: '<',
+    handleSelect: '<',
   },
 });

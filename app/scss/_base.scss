@@ -1,0 +1,36 @@
+@import "theme";
+
+@mixin base {
+  body, body * {
+    width: 100%;
+    box-sizing: border-box;
+    color: $brand-beige;
+    font-size: 4vw;
+    font-family: sans-serif;;
+    font-stretch: extra-condensed;
+    margin-bottom: $pad * 0.5;
+
+    @media screen and (min-width: 400px){
+      font-size: 3vw;
+    }
+
+    @media screen and (min-width: 720px){
+      font-size: 2vw;
+    }
+
+    @media screen and (min-width: 1000px){
+      font-size: 1.5vw;
+    }
+
+    @media screen and (min-width: 1400px){
+      font-size: 1vw;
+    }
+  }
+
+  body {
+    padding: $pad * 4.1;
+  }
+
+  button, a , input, select {
+    transition: color 500ms, background-color 500ms;
+  }

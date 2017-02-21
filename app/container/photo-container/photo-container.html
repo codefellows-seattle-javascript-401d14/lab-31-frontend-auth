@@ -1,0 +1,16 @@
+<div class="photo-container">
+
+  <h3> Gallery: {{ photoContainerCtrl.gallery.name }} </h3>
+
+  <photo-upload
+     photo="photoContainerCtrl.uploadPhoto"
+     handle-submit="photoContainerCtrl.uploadHandleSubmit">
+  </photo-upload>
+
+  <ul>
+    <photo-item
+      ng-repeat="item in photoContainerCtrl.gallery.pics track by $index"
+      photo="item">
+    </photo-item>
+  </ul>
+</div>

@@ -6,7 +6,7 @@ angular.module('slugramApp')
 .component('login' , {
   template: require('./login.html'),
   controllerAs: 'loginCtrl',
-  controller: ['$log', 'authService', '$window', function($log,authService,$window){
+  controller: ['$log', 'authService', '$location', function($log,authService,$location){
     this.$onInit = () => {
       this.user = {
         username: '',
@@ -15,13 +15,13 @@ angular.module('slugramApp')
       this.handleSubmit = () => {
         authService.login(this.user)
         .then(token => {
-          $window.alert(`token ${token}`);
+          $location.path('/gallery');
           this.user = {
             username: '',
             password: '',
           };
         })
-        .catch (() => $window.alert('whooops'));
+        .catch ($log.error);
       };
     };
   }],

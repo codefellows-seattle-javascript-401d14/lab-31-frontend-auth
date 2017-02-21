@@ -115,3 +115,33 @@ button {
    color: $brand-success;
  }
 }
+
+// theme mixins
+@mixin border {
+  border: 0.15em solid black;
+}
+
+
+.primary {
+  background-color: $brand-sky;
+}
+
+.success {
+  background-color: $brand-success;
+}
+
+.error {
+  background-color: $brand-error;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}

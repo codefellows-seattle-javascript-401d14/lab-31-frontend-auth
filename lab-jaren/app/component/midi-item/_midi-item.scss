@@ -1,0 +1,11 @@
+@import "../../scss/base.scss";
+
+.midi-item {
+  li {
+    audio {
+      display: block;
+      width: 80%;
+      margin: $pad;
+    }
+  }
+}

@@ -36,7 +36,7 @@ require('angular').module('midigramApp')
       return $http.get(url, config);
     })
     .then(res => {
-      $log.log('get /api/gallery success');
+      $log.log('get /api/gallery success', res.data);
       return res.data;
     });
   };

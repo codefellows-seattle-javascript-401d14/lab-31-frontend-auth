@@ -1,4 +1,4 @@
-<div>
+<div class="gallery-container">
   <h1>gallery page</h1>
   <gallery-create
     gallery="galleryCtrl.createFormGallery"
@@ -8,7 +8,6 @@
     <gallery-item
       ng-repeat="item in galleryCtrl.galleries track by $index"
       gallery="item"
-      ng-if="item != galleryCtrl.selected"
       handle-delete="galleryCtrl.itemHandleDelete"
       handle-select="galleryCtrl.itemHandleSelect"
       handle-update="galleryCtrl.updateHandleSubmit">

@@ -1,7 +1,7 @@
 'use strict';
 
 require('angular').module('breweryApp')
-.component('gallery', {
+.component('galleryCreate', {
   template: require('./gallery-create.html'),
   controllerAs: 'galleryCreateCtrl',
   bindings: {

@@ -6,5 +6,7 @@ require('angular').module('demoApp')
   <h1>fdsafsad</h1>
   <signup></signup>
   <login></login>
+  <gallery-create></gallery-create>
+  <gallery-list></gallery-list>
   </div>`,
 });

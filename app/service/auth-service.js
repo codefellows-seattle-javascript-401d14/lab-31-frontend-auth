@@ -6,8 +6,9 @@ require('angular').module('demoApp')
   let saveToken = (token) => {
     if (!token) return $q.reject('no token');
     try {
-      $window.localStorage.token = token;
+      $window.localStorage.token = JSON.stringify(token);
       authService.token = token;
+      return $q.resolve(token);
     } catch (err) {
       return $q.reject(err);
     }
@@ -55,7 +56,7 @@ require('angular').module('demoApp')
     let authtext = user.username + ':' + user.password;
     let config = {
       headers: {
-        Authorization: 'Basic ${$window.btoa(authtext)}',
+        Authorization: `Basic ${$window.btoa(authtext)}`,
         Accept: 'applicaton/json',
       },
     };

@@ -57,7 +57,7 @@ angular.module('myApp')
     return $http.get(url, config)
     .then(res => {
       $log.log('success');
-      return res.data;
+      return saveToken(res.data);
     });
   };
 

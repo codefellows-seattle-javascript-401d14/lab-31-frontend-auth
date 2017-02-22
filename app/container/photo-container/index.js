@@ -14,7 +14,7 @@ require('angular').module('demoApp')
       this.uploadHandleSubmit = () => {
         photoService.upload(this.gallery, this.uploadPhoto)
         .then(photo => {
-          this.gallery.pics.push(photo);
+          this.gallery.photos.push(photo);
           $log.log('boooyeah! upload success', photo);
           this.uploadPhoto = {title: '', desc: '', file: ''};
         })

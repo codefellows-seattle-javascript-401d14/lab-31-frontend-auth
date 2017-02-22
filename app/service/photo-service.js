@@ -7,7 +7,7 @@ require('angular').module('demoApp')
   photoService.upload = (gallery, photo) => {
     return authService.fetchToken()
     .then(token => {
-      let url = `${__API_URL__}/api/gallery/${gallery._id}/pic`;
+      let url = `${__API_URL__}/api/photo`;
       let headers = {
         Authorization: `Bearer ${token}`,
         Accept: 'application/json',
@@ -18,7 +18,7 @@ require('angular').module('demoApp')
         headers,
         data: {
           title: photo.title,
-          desc: photo.desc,
+          galleryID: gallery._id,
           file: photo.file,
         },
       });

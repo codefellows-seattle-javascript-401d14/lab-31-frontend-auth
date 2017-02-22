@@ -2,10 +2,10 @@
 
 require('./scss/main.scss');
 const angular = require('angular');
-
+const ngFileUpload = require('ng-file-upload');
 const uiRouter = require('angular-ui-router');
 
-angular.module('demoApp', [uiRouter])
+angular.module('demoApp', [uiRouter, ngFileUpload])
 .config(['$stateProvider', '$urlRouterProvider',  function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.when('', '/');
 
